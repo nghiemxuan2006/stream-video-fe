@@ -5,9 +5,6 @@ const Home = () => {
     return (
         <div>
             <div>Home</div>
-            <Button _onClick={() => alert('Button Clicked!')}>
-                Click Me
-            </Button>
         </div>
     )
 }
