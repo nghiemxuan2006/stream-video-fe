@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Layout from "./layout/Layout";
-import NotFoundPage from "./pages/404";
 import { ToastContainer } from "react-toastify";
+import NotFoundPage from "./pages/404";
+import Layout from "./layout/Layout";
+import Home from "./pages/home/Home";
 
 function App() {
 

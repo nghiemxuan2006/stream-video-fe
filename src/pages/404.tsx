@@ -1,5 +1,4 @@
 import notFound from '../assets/svg/not-found.svg'
-// const noResult = require("././assets/noResult.svg") as string;
 const NotFoundPage = () => {
     return (
         <div className='grid min-h-screen place-items-center p-4 sm:p-8'>
