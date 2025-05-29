@@ -9,6 +9,11 @@
     padding-top: 15px;
 }
 
+.sidebar .sidebar-header {
+    display: flex;
+    padding: 0px 12px 24px 12px;
+}
+
 .sidebar .sidebar-position {
     height: 50px;
     cursor: pointer;
@@ -45,18 +50,21 @@
     transition: width 0.3s ease;
 }
 
-.sidebar--open .sidebar-position span {
+.sidebar--open .sidebar-position span,
+.sidebar--open .sidebar-header span {
     display: block;
     width: 100%;
     height: auto;
+    align-content:center;
 }
 
 .trigger {
-    height: 50px;
-    font-size: 24px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0 12px 15px;
+    position:absolute;
+    left: calc(100% - 24px);
+
 }
