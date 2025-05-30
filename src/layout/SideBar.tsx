@@ -1,17 +1,33 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faBars,
-    faTimes,
     faCogs,
     faTable,
     faList,
-    faUser
+    faUser,
+    faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import './SideBar.css'; // Assuming you have a CSS file for styling
-import { ExpandLeftIcon, ExpandRightIcon, ViteIcon } from '../assets/icons';
+import { Avatar, ExpandLeftIcon, ExpandRightIcon, ViteIcon } from '../assets/icons';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+const paths = [
+    { path: "/", name: "Home", icon: faUser },
+    { path: "/menu2", name: "Menu item 2", icon: faCogs },
+    { path: "/menu3", name: "Menu item 3", icon: faTable },
+    { path: "/position4", name: "Position 4", icon: faList },
+]
 const SideBar = () => {
+
+    const location = useLocation();
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
+
+
+    const handleClick = (path: string) => {
+        navigate(path);
+        setIsOpen(false); // Close sidebar on navigation
+    }
 
     const handleTrigger = () => setIsOpen(!isOpen);
     return (
@@ -25,27 +41,22 @@ const SideBar = () => {
                 <span>Video Stream</span>
             </div>
             <div className='sidebar-content'>
-                <div className="sidebar-position">
-                    <FontAwesomeIcon icon={faUser} />
-                    <span>Home</span>
-                </div>
-                <div className="sidebar-position">
-                    <FontAwesomeIcon icon={faCogs} />
-                    <span>Menu item 2</span>
-                </div>
-                <div className="sidebar-position">
-                    <FontAwesomeIcon icon={faTable} />
-                    <span>Menu item 3</span>
-                </div>
-
-                <div className="sidebar-position">
-                    <FontAwesomeIcon icon={faList} />
-                    <span>Position 4</span>
-                </div>
+                {paths.map((item, index) => (
+                    <div key={index} className={`sidebar-position ${location.pathname === item.path ? 'active' : ''}`} onClick={() => handleClick(item.path)}>
+                        <FontAwesomeIcon icon={item.icon} />
+                        <span>{item.name}</span>
+                    </div>
+                ))}
             </div>
 
             <div className="sidebar-footer">
-
+                <div className='flex flex-row items-center '>
+                    <img src={Avatar} alt="avatar" className='w-[24px] h-[24px] object-contain rounded-full' />
+                    <span>Nghiem xuan</span>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faRightFromBracket} />
+                </div>
             </div>
         </div>
     )
