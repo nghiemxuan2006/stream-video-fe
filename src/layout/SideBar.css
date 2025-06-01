@@ -53,7 +53,7 @@
 
 .sidebar--open .sidebar-footer svg {
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 1s ease;
 }
 
 .sidebar span {
@@ -89,6 +89,8 @@
     justify-content: flex-end;
     padding: 0 12px 15px;
     position:absolute;
-    left: calc(100% - 24px);
+    right: -24px;
+    top: 50%;
+    transform: translateY(-50%);
 
 }

@@ -31,31 +31,33 @@ const SideBar = () => {
 
     const handleTrigger = () => setIsOpen(!isOpen);
     return (
-        <div className={`sidebar ${isOpen ? "sidebar--open" : ""}`}>
-            <div className='sidebar-header'>
+        <div className={`z-50 sidebar ${isOpen ? "sidebar--open" : ""}`}>
+            <div className='relative flex flex-col h-full'>
                 <div className="trigger" onClick={handleTrigger}>
                     <img src={`${isOpen ? ExpandLeftIcon : ExpandRightIcon}`} alt="Toggle Sidebar" />
 
                 </div>
-                <img src={ViteIcon} alt="Logo" />
-                <span>Video Stream</span>
-            </div>
-            <div className='sidebar-content'>
-                {paths.map((item, index) => (
-                    <div key={index} className={`sidebar-position ${location.pathname === item.path ? 'active' : ''}`} onClick={() => handleClick(item.path)}>
-                        <FontAwesomeIcon icon={item.icon} />
-                        <span>{item.name}</span>
-                    </div>
-                ))}
-            </div>
-
-            <div className="sidebar-footer">
-                <div className='flex flex-row items-center '>
-                    <img src={Avatar} alt="avatar" className='w-[24px] h-[24px] object-contain rounded-full' />
-                    <span>Nghiem xuan</span>
+                <div className='sidebar-header'>
+                    <img src={ViteIcon} alt="Logo" />
+                    <span>Video Stream</span>
                 </div>
-                <div>
-                    <FontAwesomeIcon icon={faRightFromBracket} />
+                <div className='sidebar-content'>
+                    {paths.map((item, index) => (
+                        <div key={index} className={`sidebar-position ${location.pathname === item.path ? 'active' : ''}`} onClick={() => handleClick(item.path)}>
+                            <FontAwesomeIcon icon={item.icon} />
+                            <span>{item.name}</span>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="sidebar-footer">
+                    <div className='flex flex-row items-center '>
+                        <img src={Avatar} alt="avatar" className='w-[24px] h-[24px] object-contain rounded-full' />
+                        <span>Nghiem xuan</span>
+                    </div>
+                    <div>
+                        <FontAwesomeIcon icon={faRightFromBracket} />
+                    </div>
                 </div>
             </div>
         </div>
