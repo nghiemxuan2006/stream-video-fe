@@ -13,9 +13,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const paths = [
     { path: "/", name: "Home", icon: faUser },
-    { path: "/menu2", name: "Menu item 2", icon: faCogs },
-    { path: "/menu3", name: "Menu item 3", icon: faTable },
-    { path: "/position4", name: "Position 4", icon: faList },
+    { path: "/favourites", name: "Favourites", icon: faCogs },
+    { path: "/trending", name: "Trendings", icon: faTable },
+    { path: "/comming-soon", name: "Comming soon", icon: faList },
 ]
 const SideBar = () => {
 

@@ -48,19 +48,22 @@
 
 @layer base{
   h1 {
-    @apply text-38 font-medium text-primary;
+    @apply text-38 font-medium text-white;
   }
   h2 {
-    @apply text-30 font-medium text-primary;
+    @apply text-30 font-medium text-white;
   }
   h3 {
-    @apply text-24 font-medium text-primary;
+    @apply text-24 font-medium text-white;
   }
   h4 {
-    @apply text-20 font-medium text-primary;
+    @apply text-20 font-medium text-white;
   }
   h5 {
-    @apply text-16 font-medium text-primary;
+    @apply text-16 font-medium text-white;
+  }
+  h6 {
+    @apply text-14 font-medium text-white;
   }
 }
 

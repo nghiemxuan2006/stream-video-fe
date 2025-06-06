@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import NotFoundPage from "./pages/404";
 import Layout from "./layout/Layout";
 import Home from "./pages/home/Home";
+import Favourites from "./pages/favourites/Favourites";
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
       <Routes>
         <Route path="" element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/trending" element={<Home />} />
         </Route>
         {/* <Route element={<PrivateRoute />}>
           <Route path="/sendCV" element={<ApplyCv />} />
