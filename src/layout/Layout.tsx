@@ -6,10 +6,10 @@ import './Layout.css' // Assuming you have a CSS file for layout styles
 
 const Layout = () => {
     return (
-        <div className="page h-creen w-full">
+        <div className="page h-full w-full">
             <SideBar />
             <div className="content bg-[#191817]">
-                <div className="header">
+                <div className="header sticky top-5 z-10 ">
                     <Header />
                 </div>
                 <Outlet />
