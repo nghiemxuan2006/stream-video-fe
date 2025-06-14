@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({
   hoverable = true
 }) => {
   return (
-    <div style={{ position: 'relative', width: 348 }}>
+    <div style={{ position: 'relative', width: '100%' }}>
       <AntCard
         hoverable={hoverable}
         loading={loading}
