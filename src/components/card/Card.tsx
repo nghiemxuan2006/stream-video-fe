@@ -9,24 +9,19 @@ interface CardProps {
   title?: string
   description?: string
   cover?: string
-  avatar?: React.ReactNode
   actions?: React.ReactNode[]
   loading?: boolean
-  hoverable?: boolean
 }
 
 const Card: React.FC<CardProps> = ({
   title = "Moonfall",
   description = "2022 | Action",
   cover = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg",
-  avatar,
   loading = false,
-  hoverable = true
 }) => {
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div className="relative w-full opacity-50 hover:opacity-100 cursor-pointer" >
       <AntCard
-        hoverable={hoverable}
         loading={loading}
         cover={
           <div className='relative'>
@@ -40,31 +35,19 @@ const Card: React.FC<CardProps> = ({
             >
               <FontAwesomeIcon icon={faHeart} color="#7C3AED" size="lg" />
             </div>
-            <div style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              padding: '20px 20px 16px 20px',
-              background: 'linear-gradient(0deg, rgba(0,0,0,0.60) 80%, rgba(0,0,0,0.10) 100%)',
-            }}>
-              <div style={{ color: 'white', fontWeight: 600, fontSize: 20, marginBottom: 4 }}>
+            <div className="absolute left-0 right-0 bottom-0 !pt-5 !px-5 !pb-4 bg-gradient-to-t from-black/60 to-black/10" >
+              <div className="text-white text-20 font-semibold mb-1">
                 {title}
               </div>
-              <div style={{ color: 'white', opacity: 0.85, fontSize: 16 }}>
+              <div className="text-white opacity-80 text-16">
                 {description}
               </div>
             </div>
           </div>
         }
-        style={{
-          borderRadius: 20,
-          overflow: 'hidden',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-          margin: 0,
-          padding: 0,
-        }}
-        bodyStyle={{ display: 'none' }}
+        className="rounded-2xl overflow-hidden shadow-2xs m-0 p-0"
+        styles={{ body: { display: 'none' } }}
+      // bodyStyle={{ display: 'none' }}
       />
     </div>
   )
