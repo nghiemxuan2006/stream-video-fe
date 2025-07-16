@@ -1,5 +1,7 @@
-import { ToastOptions, toast } from "react-toastify"
+import { type ToastOptions, toast } from "react-toastify"
 import apiService from "../interceptors";
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 
 export const showNotifications = (type: "warning" | "error" | "success" | "info", message: string = "success") => {
@@ -53,3 +55,10 @@ export const sendRequest = async (url: string, method: 'GET' | 'POST' | 'PUT' | 
         return thunkApi.rejectWithValue("Error")
     }
 }
+
+
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+

@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({
   loading = false,
 }) => {
   return (
-    <div className="relative w-full opacity-50 hover:opacity-100 cursor-pointer" >
+    <div className="relative w-full opacity-50 hover:opacity-100 cursor-pointer group" >
       <AntCard
         loading={loading}
         cover={
@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
             <img
               src={cover}
               alt={title}
-              className='object-cover w-full h-64'
+              className='object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105'
             />
             <div
               className="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md"

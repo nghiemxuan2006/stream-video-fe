@@ -7,16 +7,52 @@ import {
     faUser,
     faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  CalendarIcon,
+  HeartIcon,
+  HomeIcon,
+  LogOutIcon,
+  SettingsIcon,
+  Share2Icon,
+  TrendingUpIcon,
+  UsersIcon,
+} from "lucide-react";
 import './SideBar.css'; // Assuming you have a CSS file for styling
 import { Avatar, ExpandLeftIcon, ExpandRightIcon, ViteIcon } from '../assets/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const paths = [
-    { path: "/", name: "Home", icon: faUser },
-    { path: "/favourites", name: "Favourites", icon: faCogs },
-    { path: "/trending", name: "Trendings", icon: faTable },
-    { path: "/comming-soon", name: "Comming soon", icon: faList },
-]
+    {
+      label: "Home",
+      icon: <HomeIcon className="w-5 h-5" />,
+      path: "/",
+    },
+    {
+      label: "Favourites",
+      icon: <HeartIcon className="w-5 h-5" />,
+      path: "/favourites",
+    },
+    {
+      label: "Trending",
+      icon: <TrendingUpIcon className="w-5 h-5" />,
+      path: "/trending",
+    },
+    {
+      label: "Coming soon",
+      icon: <CalendarIcon className="w-5 h-5" />,
+      path: "/coming-soon",
+    },
+    {
+      label: "Community",
+      icon: <UsersIcon className="w-5 h-5" />,
+      path: "/community",
+    },
+    {
+      label: "Social",
+      icon: <Share2Icon className="w-5 h-5" />,
+      path: "/social",
+    },
+  ];
 const SideBar = () => {
 
     const location = useLocation();
@@ -44,8 +80,8 @@ const SideBar = () => {
                 <div className='sidebar-content'>
                     {paths.map((item, index) => (
                         <div key={index} className={`sidebar-position ${location.pathname === item.path ? 'active' : ''}`} onClick={() => handleClick(item.path)}>
-                            <FontAwesomeIcon icon={item.icon} />
-                            <span>{item.name}</span>
+                            {item.icon}
+                            <span>{item.label}</span>
                         </div>
                     ))}
                 </div>
